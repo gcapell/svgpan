@@ -15,7 +15,7 @@ import (
 )
 
 var (
-	script = flag.String("script", "https://raw.githubusercontent.com/gcapell/svgpan/master/SVGPan.js", "URL/file for SVGPan script")
+	script = flag.String("script", "https://cdn.rawgit.com/gcapell/svgpan/d8a6400441da1b3369d659cf29169ca6e5e6928e/SVGPan.js", "URL/file for SVGPan script")
 	outFile = flag.String("o", "", "filename to output to, defaults to stdout")
 	inFile = flag.String("i", "", "filename to read from, defaults to stdin")
 )
@@ -120,6 +120,7 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
+		defer outf.Close()
 	}
 	if err := filterPan(inf, outf); err != nil {
 		log.Fatal(err)
