@@ -1,3 +1,5 @@
+// Copy an SVG file, adding a 'script' element and changing the first 'g' element
+// to work with SVGPan.
 package main
 
 import (
